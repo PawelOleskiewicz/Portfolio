@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .tabs { display: flex; margin-bottom: 10px; }
+    .tab { padding: 10px 20px; cursor: pointer; background: #ddd; margin-right: 5px; }
+    .tab.active { background: #aaa; }
+    .content { display: none; }
+    .content.active { display: block; }
+  </style>
+</head>
+<body>
+
+<h1>My Portfolio</h1>
+
+<div class="tabs">
+  <div class="tab active" data-tab="projects">Projects</div>
+  <div class="tab" data-tab="skills">Skills</div>
+  <div class="tab" data-tab="contact">Contact</div>
+</div>
+
+<div id="projects" class="content active">
+  <h2>Projects</h2>
+  <p>Here are my test projects and labs...</p>
+</div>
+
+<div id="skills" class="content">
+  <h2>Skills</h2>
+  <p>AD, Intune, Networking, GitHub, etc.</p>
+</div>
+
+<div id="contact" class="content">
+  <h2>Contact</h2>
+  <p>Email: you@example.com</p>
+</div>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const contents = document.querySelectorAll('.content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const target = tab.dataset.tab;
+      contents.forEach(c => c.classList.remove('active'));
+      document.getElementById(target).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
