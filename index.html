@@ -3,55 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    .tabs { display: flex; margin-bottom: 10px; }
-    .tab { padding: 10px 20px; cursor: pointer; background: #ddd; margin-right: 5px; }
-    .tab.active { background: #aaa; }
-    .content { display: none; }
-    .content.active { display: block; }
-  </style>
+  <title>My IT Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1>My IT Portfolio</h1>
+    <nav class="tabs">
+      <div class="tab active" data-tab="projects">Projects</div>
+      <div class="tab" data-tab="skills">Skills</div>
+      <div class="tab" data-tab="contact">Contact</div>
+    </nav>
+  </header>
 
-<h1>My Portfolio</h1>
+  <main>
+    <section id="projects" class="content active">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>AD & GPO Lab</h3>
+        <p>Test environment with Windows Server, Active Directory, and Group Policies.</p>
+      </div>
+      <div class="project">
+        <h3>Intune Endpoint Management</h3>
+        <p>Tested Autopilot, compliance policies, and app deployment on Windows 11 devices.</p>
+      </div>
+      <div class="project">
+        <h3>Networking Lab</h3>
+        <p>Configured VLANs, inter-VLAN routing, ACLs, and network testing in a lab environment.</p>
+      </div>
+    </section>
 
-<div class="tabs">
-  <div class="tab active" data-tab="projects">Projects</div>
-  <div class="tab" data-tab="skills">Skills</div>
-  <div class="tab" data-tab="contact">Contact</div>
-</div>
+    <section id="skills" class="content">
+      <h2>Skills</h2>
+      <ul>
+        <li>Active Directory, Group Policy</li>
+        <li>Microsoft Intune & Azure AD</li>
+        <li>Networking: VLAN, Routing, ACLs</li>
+        <li>Git & GitHub</li>
+        <li>Windows & Linux Administration</li>
+      </ul>
+    </section>
 
-<div id="projects" class="content active">
-  <h2>Projects</h2>
-  <p>Here are my test projects and labs...</p>
-</div>
+    <section id="contact" class="content">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/your-username" target="_blank">github.com/your-username</a></p>
+    </section>
+  </main>
 
-<div id="skills" class="content">
-  <h2>Skills</h2>
-  <p>AD, Intune, Networking, GitHub, etc.</p>
-</div>
-
-<div id="contact" class="content">
-  <h2>Contact</h2>
-  <p>Email: you@example.com</p>
-</div>
-
-<script>
-  const tabs = document.querySelectorAll('.tab');
-  const contents = document.querySelectorAll('.content');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const target = tab.dataset.tab;
-      contents.forEach(c => c.classList.remove('active'));
-      document.getElementById(target).classList.add('active');
-    });
-  });
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
+
